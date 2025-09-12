@@ -1,0 +1,15 @@
+C:\Users\Joao Pedro Matias\Documents\Back\Back-end\Aula_02\ex2_editarTexto\obj\Debug\net9.0\ex2_editarTexto.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Joao Pedro Matias\Documents\Back\Back-end\Aula_02\ex2_editarTexto\obj\Debug\net9.0\ex2_editarTexto.AssemblyInfoInputs.cache
+C:\Users\Joao Pedro Matias\Documents\Back\Back-end\Aula_02\ex2_editarTexto\obj\Debug\net9.0\ex2_editarTexto.AssemblyInfo.cs
+C:\Users\Joao Pedro Matias\Documents\Back\Back-end\Aula_02\ex2_editarTexto\obj\Debug\net9.0\ex2_editarTexto.csproj.CoreCompileInputs.cache
+C:\Users\Joao Pedro Matias\Documents\Back\Back-end\Aula_02\ex2_editarTexto\obj\Debug\net9.0\ex2_editarTexto.sourcelink.json
+C:\Users\Joao Pedro Matias\Documents\Back\Back-end\Aula_02\ex2_editarTexto\bin\Debug\net9.0\ex2_editarTexto.exe
+C:\Users\Joao Pedro Matias\Documents\Back\Back-end\Aula_02\ex2_editarTexto\bin\Debug\net9.0\ex2_editarTexto.deps.json
+C:\Users\Joao Pedro Matias\Documents\Back\Back-end\Aula_02\ex2_editarTexto\bin\Debug\net9.0\ex2_editarTexto.runtimeconfig.json
+C:\Users\Joao Pedro Matias\Documents\Back\Back-end\Aula_02\ex2_editarTexto\bin\Debug\net9.0\ex2_editarTexto.dll
+C:\Users\Joao Pedro Matias\Documents\Back\Back-end\Aula_02\ex2_editarTexto\bin\Debug\net9.0\ex2_editarTexto.pdb
+C:\Users\Joao Pedro Matias\Documents\Back\Back-end\Aula_02\ex2_editarTexto\obj\Debug\net9.0\ex2_editarTexto.dll
+C:\Users\Joao Pedro Matias\Documents\Back\Back-end\Aula_02\ex2_editarTexto\obj\Debug\net9.0\refint\ex2_editarTexto.dll
+C:\Users\Joao Pedro Matias\Documents\Back\Back-end\Aula_02\ex2_editarTexto\obj\Debug\net9.0\ex2_editarTexto.pdb
+C:\Users\Joao Pedro Matias\Documents\Back\Back-end\Aula_02\ex2_editarTexto\obj\Debug\net9.0\ex2_editarTexto.genruntimeconfig.cache
+C:\Users\Joao Pedro Matias\Documents\Back\Back-end\Aula_02\ex2_editarTexto\obj\Debug\net9.0\ref\ex2_editarTexto.dll

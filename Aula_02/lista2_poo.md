@@ -28,8 +28,8 @@ Para mais informações acesse [Aula 01: Paradigma POO.](https://cainaantunes.no
             - Value : double
             - Name : string
             + Deposit (double value, int number) : bool
-            + CashOut (double value)
-            + CheckBalance ( ) : void
+            + CashOut (double value): bool
+            + CheckBalance ( ) : double
         }
     ```
     

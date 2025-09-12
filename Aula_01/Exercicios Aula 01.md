@@ -25,7 +25,7 @@ Crie um diagrama de classe UML que represente essa entidade.
         class Carro {
             -Cor: string
             -Velocidade: int
-            +Acelerar(incremento: int): void
+            +Acelerar(incremento: int): void 
             +Frear(decremento: int): void
         }
     ```
@@ -77,10 +77,19 @@ Crie uma classe UML com base nessas reflexões.
         class Nome do Produto {
             -Id: int
             -Nome: string
-            -Quantidade: int
+            -Valor: double
             -Tipo: string
-            +AdicionarCarrinho(): void
-            +Comprar(): void         
+            +AdicionarCarrinho(id: int): bool
+            +Comprar(id: int): bool         
+            +Pagar(value: double): bool
+            
+            +Criar(id:int, nome:string, valor:double, tipo:string)
+            +Visualizar(id:int):string
+            +Atualiar(nome:string,valor:double,tipo:string):bool
+            +Deletar(id:int):bool
+            %%Create, Read, Update, Delete = CRUD
+            %%Muitas vezes temos que ter esses métodos, para facilitar eles são o CRUD
+
         }
     ```
 
@@ -94,10 +103,11 @@ Quais dados o sistema precisaria guardar sobre esse livro? Que ações poderiam 
             -Id: int
             -Título: string
             -Quantidade: int
+            -Preço: double
             -Autor: string
             -Editor: string
-            +Comprar(): void
-            +Consultar(): string
+            +Comprar(preço:double): bool
+            +Consultar(id:int,titulo:string,autor:string,editora:string): []Livro
         }
     ```
 
@@ -108,12 +118,13 @@ Modele isso como uma classe UML.
     ```mermaid
         classDiagram
         class Banco {
-            -Número da conta: long
+            -Número da conta: int
             -Proprietário: string
-            -Chave: int
+            -ChavePix: string
             -Saldo: float
-            +FazerPix(valor:float):void
-            +GuardarDinheiro(valor:float):void
+            -Senha: int
+            +FazerPix(numero:int, valor:float, chavepix:string, senha:int):bool
+            +GuardarDinheiro(numero:int, valor:float, senha:int):bool
         }
     ```
 
@@ -123,32 +134,35 @@ Crie uma classe que represente esse "usuário" de forma genérica, com seus atri
 
     ```mermaid
         classDiagram
-        class Usuário {
+        class Usuario {
             -Id: int
             -Nome: string
             -Email: string
             -CPF: int
             -Nascimento: int
-            +AtualizarDados(dados:string/int): void
-            +ExcluirConta(): void
+            -Senha: string
+            +Criar(id:int, nome:string, email:string, cpf:int, nascimento:int, senha:string): bool
+            +AtualizarDados(nome:string, email:string, cpf:int, nascimento:int, senha:string): bool
+            +Login(email:string,cpf:int,senha:int):bool
+            +ExcluirConta(id:int): bool
         }
     ```
 
 8. **Pedido de Compra:**<br>
 Em um sistema de compras online ou presencial, como um pedido de compra pode ser estruturado em uma classe?<br>
-Pense em quais informações estão envolvidas em um pedido e quais ações podem ser realizadas com ele.
+Pense em quais informações estão envolvidas em um pedido e quais ações podem ser realizadas com ele. 
 
     ```mermaid
         classDiagram
         class Pedido {
             -Id:int
-            -Produto: string
-            -Data: int
-            -Vendedor: string
-            -Valor:double
-            +Comprar(): void
-            +AdicionarCarrinho(): void
-            +Analisar(): void
+            -Produto: []NomeDoProduto
+            -Data: DateTime
+            -ValorTotal: double
+            +AdicionarItem(produto:Produto, quantidade:int): bool
+            CalcularTotal():void 
+            %%As informações serão salvas no ValorTotal podendo assim retornar void
+            
         }
     ```
 
@@ -159,10 +173,12 @@ Reflita sobre os dados e comportamentos necessários para modelar esse conceito.
     ```mermaid
         classDiagram
         class Login {
-            -Nome: string
-            -Senha: string
-            -Email: string            
-            +Login(): void
+            -Token: string
+            -Time: DateTime
+            -Ativo: bool          
+            +Conectar(momento;DateTime): bool
+            %%Pode dar errado
+            +Desconectar():void
         }
     ```
 
@@ -173,12 +189,17 @@ Modele esse objeto como uma classe UML.
     ```mermaid
         classDiagram
         class Repositório {
-            -NomeDoRepositorio: string
-            -Id: int
-            -NomeDoAutor: string
-            +Clonar(): void
-            +Atualizar(): void
-            +SubirArquivos(): void
+            -Nome: string
+            -Link: int
+            -NomeDoAutor: Usuario
+            -Colaboradores: Usuario
+            -Arquivo: Object
+
+            +CRUD(coisas do CRUD): - 
+            +Clonar(): bool           
+            +Commit(m: string): bool
+            +Push(url:string): bool
+            +Pull(url:string): bool
         }
     ```
 
