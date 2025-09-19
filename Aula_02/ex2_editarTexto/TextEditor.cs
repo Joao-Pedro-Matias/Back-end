@@ -13,7 +13,7 @@ public class TextEditor
     public TextEditor(string name) {
         Name = name;
         Size = 0;
-        Content = "Andrezao amante de traveco";
+        Content = "";
     }
 
     //Métodos
@@ -23,12 +23,30 @@ public class TextEditor
         char[] size = Content.ToCharArray();
         Size = size.Length * 8;
 
-        return $" Nome do Texto: {Name}\n Tamanho: {Size} bits\n Conteúdo:\n {Content}\n";
+        return $"\nNome do Texto: {Name}\n Tamanho: {Size} bits\n Conteúdo: {Content}\n";
         
     }
 
     public bool Edit(string edit) {
 
-        Content += edit
+        Content += edit;
+        return true;
     }
+
+
+    public bool Rename(string newName) {
+        if (newName == null)
+            return false;
+
+        Name = newName;
+        return true;
+   }
+
+
+   public void Clear() {
+
+    Content = "";
+
+   }
+
 }
