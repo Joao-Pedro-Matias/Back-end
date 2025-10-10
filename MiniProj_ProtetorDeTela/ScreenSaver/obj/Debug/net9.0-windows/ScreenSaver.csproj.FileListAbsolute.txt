@@ -1,0 +1,15 @@
+C:\Users\Joao Pedro Matias\Documents\Back\Back-end\MiniProj_ProtetorDeTela\ScreenSaver\bin\Debug\net9.0-windows\ScreenSaver.exe
+C:\Users\Joao Pedro Matias\Documents\Back\Back-end\MiniProj_ProtetorDeTela\ScreenSaver\bin\Debug\net9.0-windows\ScreenSaver.deps.json
+C:\Users\Joao Pedro Matias\Documents\Back\Back-end\MiniProj_ProtetorDeTela\ScreenSaver\bin\Debug\net9.0-windows\ScreenSaver.runtimeconfig.json
+C:\Users\Joao Pedro Matias\Documents\Back\Back-end\MiniProj_ProtetorDeTela\ScreenSaver\bin\Debug\net9.0-windows\ScreenSaver.dll
+C:\Users\Joao Pedro Matias\Documents\Back\Back-end\MiniProj_ProtetorDeTela\ScreenSaver\bin\Debug\net9.0-windows\ScreenSaver.pdb
+C:\Users\Joao Pedro Matias\Documents\Back\Back-end\MiniProj_ProtetorDeTela\ScreenSaver\obj\Debug\net9.0-windows\ScreenSaver.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Joao Pedro Matias\Documents\Back\Back-end\MiniProj_ProtetorDeTela\ScreenSaver\obj\Debug\net9.0-windows\ScreenSaver.AssemblyInfoInputs.cache
+C:\Users\Joao Pedro Matias\Documents\Back\Back-end\MiniProj_ProtetorDeTela\ScreenSaver\obj\Debug\net9.0-windows\ScreenSaver.AssemblyInfo.cs
+C:\Users\Joao Pedro Matias\Documents\Back\Back-end\MiniProj_ProtetorDeTela\ScreenSaver\obj\Debug\net9.0-windows\ScreenSaver.csproj.CoreCompileInputs.cache
+C:\Users\Joao Pedro Matias\Documents\Back\Back-end\MiniProj_ProtetorDeTela\ScreenSaver\obj\Debug\net9.0-windows\ScreenSaver.sourcelink.json
+C:\Users\Joao Pedro Matias\Documents\Back\Back-end\MiniProj_ProtetorDeTela\ScreenSaver\obj\Debug\net9.0-windows\ScreenSaver.dll
+C:\Users\Joao Pedro Matias\Documents\Back\Back-end\MiniProj_ProtetorDeTela\ScreenSaver\obj\Debug\net9.0-windows\refint\ScreenSaver.dll
+C:\Users\Joao Pedro Matias\Documents\Back\Back-end\MiniProj_ProtetorDeTela\ScreenSaver\obj\Debug\net9.0-windows\ScreenSaver.pdb
+C:\Users\Joao Pedro Matias\Documents\Back\Back-end\MiniProj_ProtetorDeTela\ScreenSaver\obj\Debug\net9.0-windows\ScreenSaver.genruntimeconfig.cache
+C:\Users\Joao Pedro Matias\Documents\Back\Back-end\MiniProj_ProtetorDeTela\ScreenSaver\obj\Debug\net9.0-windows\ref\ScreenSaver.dll

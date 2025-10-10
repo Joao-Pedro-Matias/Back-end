@@ -1,0 +1,15 @@
+C:\Users\Joao Pedro Matias\Documents\Back\Back-end\Aula_02\ex3_jogoDeLuta\bin\Debug\net9.0\ex3_jogoDeLuta.exe
+C:\Users\Joao Pedro Matias\Documents\Back\Back-end\Aula_02\ex3_jogoDeLuta\bin\Debug\net9.0\ex3_jogoDeLuta.deps.json
+C:\Users\Joao Pedro Matias\Documents\Back\Back-end\Aula_02\ex3_jogoDeLuta\bin\Debug\net9.0\ex3_jogoDeLuta.runtimeconfig.json
+C:\Users\Joao Pedro Matias\Documents\Back\Back-end\Aula_02\ex3_jogoDeLuta\bin\Debug\net9.0\ex3_jogoDeLuta.dll
+C:\Users\Joao Pedro Matias\Documents\Back\Back-end\Aula_02\ex3_jogoDeLuta\bin\Debug\net9.0\ex3_jogoDeLuta.pdb
+C:\Users\Joao Pedro Matias\Documents\Back\Back-end\Aula_02\ex3_jogoDeLuta\obj\Debug\net9.0\ex3_jogoDeLuta.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Joao Pedro Matias\Documents\Back\Back-end\Aula_02\ex3_jogoDeLuta\obj\Debug\net9.0\ex3_jogoDeLuta.AssemblyInfoInputs.cache
+C:\Users\Joao Pedro Matias\Documents\Back\Back-end\Aula_02\ex3_jogoDeLuta\obj\Debug\net9.0\ex3_jogoDeLuta.AssemblyInfo.cs
+C:\Users\Joao Pedro Matias\Documents\Back\Back-end\Aula_02\ex3_jogoDeLuta\obj\Debug\net9.0\ex3_jogoDeLuta.csproj.CoreCompileInputs.cache
+C:\Users\Joao Pedro Matias\Documents\Back\Back-end\Aula_02\ex3_jogoDeLuta\obj\Debug\net9.0\ex3_jogoDeLuta.sourcelink.json
+C:\Users\Joao Pedro Matias\Documents\Back\Back-end\Aula_02\ex3_jogoDeLuta\obj\Debug\net9.0\ex3_jogoDeLuta.dll
+C:\Users\Joao Pedro Matias\Documents\Back\Back-end\Aula_02\ex3_jogoDeLuta\obj\Debug\net9.0\refint\ex3_jogoDeLuta.dll
+C:\Users\Joao Pedro Matias\Documents\Back\Back-end\Aula_02\ex3_jogoDeLuta\obj\Debug\net9.0\ex3_jogoDeLuta.pdb
+C:\Users\Joao Pedro Matias\Documents\Back\Back-end\Aula_02\ex3_jogoDeLuta\obj\Debug\net9.0\ex3_jogoDeLuta.genruntimeconfig.cache
+C:\Users\Joao Pedro Matias\Documents\Back\Back-end\Aula_02\ex3_jogoDeLuta\obj\Debug\net9.0\ref\ex3_jogoDeLuta.dll
