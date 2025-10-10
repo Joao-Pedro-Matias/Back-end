@@ -1,25 +1,39 @@
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
+
 namespace Models.BaseShapes;
 
 public class MyRectangle : Shape
 {
-    //Atrubutos
-    public int Width;
-    public int Height;
+    //Atributos    
+    public int XLimit;
+    public int YLimit;
 
     // Construtores
-    public MyRectangle(int x, int y, Color color, int width, int height) : base(x, y, color)
+    public MyRectangle(int xLimit, int yLimit) : base(xLimit, yLimit)
     {
-        Width = width;
-        Height = height;
-
+        XLimit = xLimit;
+        YLimit = yLimit;
     }
 
     //Métodos  
 
-    public void Move(int xLimit, int yLimit)
+    public void Move()
     {
-        X++;
-        Y++;
+        if (X + Width > XLimit || X < 0)
+        {
+            xVel *= -1;
+            ColorShape = ColorGenerate();
+        }
+
+        if (Y + Height > YLimit || Y < 0)
+        {
+            yVel *= -1;
+            ColorShape = ColorGenerate();
+        }
+            
+        X += xVel;
+        Y += yVel;
     }
 
     public void Draw(Graphics g)

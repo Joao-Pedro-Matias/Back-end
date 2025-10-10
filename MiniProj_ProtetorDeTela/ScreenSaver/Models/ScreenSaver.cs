@@ -26,8 +26,8 @@ public class ScreenSaver : Form
         ControlTimer.Tick += (s, e) =>
         {
             // ****** Mova suas formas geométricas aqui ******
-
-            r.Move(1920, 1080);
+            
+            r.Move();
 
             // ***********************************************
             Invalidate(); // Foça a tela a ser redesenhada.
@@ -40,7 +40,7 @@ public class ScreenSaver : Form
         base.OnLoad(e);
         // ****** Instancie suas formas geométricas aqui ******
 
-        r = new MyRectangle(0, 0, Color.Red , 200, 100);
+        r = new MyRectangle(ClientSize.Width, ClientSize.Height);
 
         // ****************************************************
     }
