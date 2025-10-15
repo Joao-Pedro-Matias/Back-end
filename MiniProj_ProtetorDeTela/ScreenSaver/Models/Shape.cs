@@ -1,33 +1,59 @@
 namespace Models.BaseShapes;
 
-public class Shape
+public abstract class Shape
 {
     //Atributos
-    public int X;
-    public int Y;
-    public int xVel;
-    public int yVel;
-    public int Width;
-    public int Height;
-    public Color ColorShape;
-    public Random Rand = new Random();
+    protected int X;
+    protected int Y;
+    protected int XLimit;
+    protected int YLimit;
+    protected int XVel;
+    protected int YVel;
+    protected int Width;
+    protected int Height;
+    protected Color ColorShape;
+    protected Random Rand = new Random();
 
     // Construtores
 
     public Shape(int xLimit, int yLimit)
     {
+        XLimit = xLimit;
+        YLimit = yLimit;
+        
         Width = Rand.Next(40, 100);
-        Height = Rand.Next(40, 100);        
-        X = Rand.Next(0, xLimit);
-        Y = Rand.Next(0, yLimit);
+        Height = Rand.Next(40, 100);
+
+
+        X = Rand.Next(0, XLimit);
+        Y = Rand.Next(0, YLimit);
         ColorShape = ColorGenerate();
-        xVel = Rand.Next(-7, 7);
-        yVel = Rand.Next(-7, 7);
+
+        XVel = Rand.Next(-10, 10);
+        YVel = Rand.Next(-10, 10);
 
     }
     //Métodos
+    
+    public void Move()
+    {
+        if (X + Width > XLimit || X < 0)
+        {
+            XVel *= -1;
+            ColorShape = ColorGenerate();
+        }
 
-    public Color ColorGenerate()
+        if (Y + Height > YLimit || Y < 0)
+        {
+            YVel *= -1;
+            ColorShape = ColorGenerate();
+        }
+            
+        X += XVel;
+        Y += YVel;
+    }
+
+    private Color ColorGenerate()
     {
         int red = Rand.Next(0, 255);
         int green = Rand.Next(0, 255);

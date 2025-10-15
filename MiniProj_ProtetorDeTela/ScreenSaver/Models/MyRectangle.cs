@@ -6,35 +6,14 @@ namespace Models.BaseShapes;
 public class MyRectangle : Shape
 {
     //Atributos    
-    public int XLimit;
-    public int YLimit;
 
-    // Construtores
+    // Construtorest 
     public MyRectangle(int xLimit, int yLimit) : base(xLimit, yLimit)
     {
-        XLimit = xLimit;
-        YLimit = yLimit;
     }
 
-    //Métodos  
 
-    public void Move()
-    {
-        if (X + Width > XLimit || X < 0)
-        {
-            xVel *= -1;
-            ColorShape = ColorGenerate();
-        }
-
-        if (Y + Height > YLimit || Y < 0)
-        {
-            yVel *= -1;
-            ColorShape = ColorGenerate();
-        }
-            
-        X += xVel;
-        Y += yVel;
-    }
+    //Métodos     
 
     public void Draw(Graphics g)
     {

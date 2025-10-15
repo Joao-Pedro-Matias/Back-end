@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ex3_jogoDeLuta")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+001f8f7e165b97e9edb7ffbdf49b9c989557c0f6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ca5f7d29e6e60ae6483e29b29d66b4c372f65744")]
 [assembly: System.Reflection.AssemblyProductAttribute("ex3_jogoDeLuta")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ex3_jogoDeLuta")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
