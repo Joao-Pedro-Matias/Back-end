@@ -20,7 +20,7 @@ public abstract class Shape
     {
         XLimit = xLimit;
         YLimit = yLimit;
-        
+
         Width = Rand.Next(40, 100);
         Height = Rand.Next(40, 100);
 
@@ -29,28 +29,52 @@ public abstract class Shape
         Y = Rand.Next(0, YLimit);
         ColorShape = ColorGenerate();
 
-        XVel = Rand.Next(-10, 10);
-        YVel = Rand.Next(-10, 10);
+        do
+            XVel = Rand.Next(-10, 11);
+        while (XVel == 0);
+
+        do
+            YVel = Rand.Next(-10, 10);
+        while (YVel == 0);
 
     }
     //Métodos
-    
-    public void Move()
+
+    public void Move(int xLimit, int yLimit)
     {
-        if (X + Width > XLimit || X < 0)
+        XLimit = xLimit;
+        YLimit = yLimit;
+
+
+        if (X + Width > XLimit + XVel && XVel > 0)
         {
             XVel *= -1;
             ColorShape = ColorGenerate();
         }
 
-        if (Y + Height > YLimit || Y < 0)
+        if (X < 0 - XVel && XVel < 0)
+        {
+            XVel *= -1;
+            ColorShape = ColorGenerate();
+        }
+
+
+        if (Y + Height > YLimit + YVel && YVel > 0)
         {
             YVel *= -1;
             ColorShape = ColorGenerate();
         }
-            
+
+        if (Y < 0 - YVel && YVel < 0)
+        {
+            YVel *= -1;
+            ColorShape = ColorGenerate();
+        }
+
+
         X += XVel;
         Y += YVel;
+
     }
 
     private Color ColorGenerate()

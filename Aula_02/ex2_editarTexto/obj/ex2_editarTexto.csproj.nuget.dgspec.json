@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Joao Pedro Matias\\Documents\\Back\\Back-end\\Aula_02\\ex2_editarTexto\\ex2_editarTexto.csproj": {}
+    "C:\\Users\\JP\\OneDrive\\Documentos\\João\\Faculdade\\SENAI\\Back-End\\Back-end\\Aula_02\\ex2_editarTexto\\ex2_editarTexto.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Joao Pedro Matias\\Documents\\Back\\Back-end\\Aula_02\\ex2_editarTexto\\ex2_editarTexto.csproj": {
+    "C:\\Users\\JP\\OneDrive\\Documentos\\João\\Faculdade\\SENAI\\Back-End\\Back-end\\Aula_02\\ex2_editarTexto\\ex2_editarTexto.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Joao Pedro Matias\\Documents\\Back\\Back-end\\Aula_02\\ex2_editarTexto\\ex2_editarTexto.csproj",
+        "projectUniqueName": "C:\\Users\\JP\\OneDrive\\Documentos\\João\\Faculdade\\SENAI\\Back-End\\Back-end\\Aula_02\\ex2_editarTexto\\ex2_editarTexto.csproj",
         "projectName": "ex2_editarTexto",
-        "projectPath": "C:\\Users\\Joao Pedro Matias\\Documents\\Back\\Back-end\\Aula_02\\ex2_editarTexto\\ex2_editarTexto.csproj",
-        "packagesPath": "C:\\Users\\Joao Pedro Matias\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Joao Pedro Matias\\Documents\\Back\\Back-end\\Aula_02\\ex2_editarTexto\\obj\\",
+        "projectPath": "C:\\Users\\JP\\OneDrive\\Documentos\\João\\Faculdade\\SENAI\\Back-End\\Back-end\\Aula_02\\ex2_editarTexto\\ex2_editarTexto.csproj",
+        "packagesPath": "C:\\Users\\JP\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\JP\\OneDrive\\Documentos\\João\\Faculdade\\SENAI\\Back-End\\Back-end\\Aula_02\\ex2_editarTexto\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Joao Pedro Matias\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\JP\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -59,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

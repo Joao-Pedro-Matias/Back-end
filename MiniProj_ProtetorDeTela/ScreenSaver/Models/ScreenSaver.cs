@@ -9,7 +9,8 @@ public class ScreenSaver : Form
 {
     // ******* Declare suas formas geométricas aqui (escopo global) *******
     
-    MyRectangle[] Shapes = new MyRectangle[2];
+    MyRectangle[] Rectangles = new MyRectangle[100];
+    
 
     // ********************************************************************
     private Timer ControlTimer;
@@ -20,11 +21,12 @@ public class ScreenSaver : Form
         this.WindowState = FormWindowState.Maximized;   // Maximiza a janela
         // Define a cor de background 
         this.BackColor = Color.Black;
-        
-        
+
+        /*        
         this.BackgroundImage = Image.FromFile("Andre.jpeg");
         this.BackgroundImageLayout = ImageLayout.Stretch;               
-        
+        */
+
         // Inicializa o temporizador de controle
         ControlTimer = new Timer();
         ControlTimer.Interval = 16;                     // 16 ms = ~60 fps
@@ -32,11 +34,11 @@ public class ScreenSaver : Form
         ControlTimer.Tick += (s, e) =>
         {
             // ****** Mova suas formas geométricas aqui ******
-            foreach (var shape in Shapes)
-                shape.Move();
+            foreach (var shape in Rectangles)
+                shape.Move(ClientSize.Width, ClientSize.Height);
 
             // ***********************************************
-            Invalidate(); // Foça a tela a ser redesenhada.
+            Invalidate(); // Força a tela a ser redesenhada.
         }; // Função anônima disparada pelo ControlTimer a cada Interval (ms)
         ControlTimer.Start();
     }
@@ -46,9 +48,8 @@ public class ScreenSaver : Form
         base.OnLoad(e);
         // ****** Instancie suas formas geométricas aqui ******
 
-                
-        Shapes[0] = new MyRectangle(ClientSize.Width, ClientSize.Height);
-        Shapes[1] = new MyRectangle(ClientSize.Width, ClientSize.Height);
+        for (int i=0; i<Rectangles.Length; i++ )
+            Rectangles[i] = new MyRectangle(ClientSize.Width, ClientSize.Height);
 
         // ****************************************************
     }
@@ -58,7 +59,7 @@ public class ScreenSaver : Form
         base.OnPaint(e);
         // ****** Desenhe suas formas geométricas aqui *******
 
-        foreach (var shape in Shapes)
+        foreach (var shape in Rectangles)
             shape.Draw(e.Graphics);
 
         // ***************************************************
