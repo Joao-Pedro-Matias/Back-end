@@ -3,14 +3,15 @@ namespace Models;
 using Models.BaseShapes;
 using System.Drawing;
 using System.Globalization;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 public class ScreenSaver : Form
 {
     // ******* Declare suas formas geométricas aqui (escopo global) *******
-    
-    MyRectangle[] Rectangles = new MyRectangle[100];
-    
+
+    MyRectangle[] Rectangles = new MyRectangle[150];
+
 
     // ********************************************************************
     private Timer ControlTimer;
@@ -22,18 +23,20 @@ public class ScreenSaver : Form
         // Define a cor de background 
         this.BackColor = Color.Black;
 
-        /*        
-        this.BackgroundImage = Image.FromFile("Andre.jpeg");
-        this.BackgroundImageLayout = ImageLayout.Stretch;               
+        /*
+        this.BackgroundImage = Image.FromFile("./Fotos/Andre1.jpeg");
+        this.BackgroundImageLayout = ImageLayout.Stretch;  
         */
+
 
         // Inicializa o temporizador de controle
         ControlTimer = new Timer();
-        ControlTimer.Interval = 16;                     // 16 ms = ~60 fps
+        ControlTimer.Interval = 16;                     // 16 ms =~ 60 fps
         // Controle da animação
         ControlTimer.Tick += (s, e) =>
         {
             // ****** Mova suas formas geométricas aqui ******
+
             foreach (var shape in Rectangles)
                 shape.Move(ClientSize.Width, ClientSize.Height);
 
@@ -48,8 +51,10 @@ public class ScreenSaver : Form
         base.OnLoad(e);
         // ****** Instancie suas formas geométricas aqui ******
 
-        for (int i=0; i<Rectangles.Length; i++ )
+
+        for (int i = 0; i < Rectangles.Length; i++)
             Rectangles[i] = new MyRectangle(ClientSize.Width, ClientSize.Height);
+
 
         // ****************************************************
     }

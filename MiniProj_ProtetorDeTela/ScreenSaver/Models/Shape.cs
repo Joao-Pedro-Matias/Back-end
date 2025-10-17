@@ -1,3 +1,5 @@
+using System.Dynamic;
+
 namespace Models.BaseShapes;
 
 public abstract class Shape
@@ -5,32 +7,46 @@ public abstract class Shape
     //Atributos
     protected int X;
     protected int Y;
-    protected int XLimit;
-    protected int YLimit;
     protected int XVel;
     protected int YVel;
     protected int Width;
     protected int Height;
     protected Color ColorShape;
-    protected Random Rand = new Random();
+    private Random Rand = new Random();
+
+    public bool Collision;
+
+
 
     // Construtores
 
+    public Shape(int x, int y, Color color, int width, int height, int xVel, int yVel)
+    {
+        X = x;
+        Y = y;
+        XVel = xVel;
+        YVel = yVel;
+        Width = width;
+        Height = height;
+        ColorShape = color;
+    }
+
     public Shape(int xLimit, int yLimit)
     {
-        XLimit = xLimit;
-        YLimit = yLimit;
+        //Altura e Largura Aleatórios
+        Width = Rand.Next(50, 250);
+        Height = Rand.Next(50, 250);
 
-        Width = Rand.Next(40, 100);
-        Height = Rand.Next(40, 100);
+        //Posição Aleatória
+        X = Rand.Next(0, xLimit - Width);
+        Y = Rand.Next(0, yLimit - Height);
 
-
-        X = Rand.Next(0, XLimit);
-        Y = Rand.Next(0, YLimit);
+        //Cor Aleatória
         ColorShape = ColorGenerate();
 
+        //Velocidade != 0
         do
-            XVel = Rand.Next(-10, 11);
+            XVel = Rand.Next(-10, 10);
         while (XVel == 0);
 
         do
@@ -40,13 +56,11 @@ public abstract class Shape
     }
     //Métodos
 
-    public void Move(int xLimit, int yLimit)
+    public bool Move(int xLimit, int yLimit)
     {
-        XLimit = xLimit;
-        YLimit = yLimit;
-
-
-        if (X + Width > XLimit + XVel && XVel > 0)
+        Collision = false;
+        
+        if (X + Width > xLimit + XVel && XVel > 0)
         {
             XVel *= -1;
             ColorShape = ColorGenerate();
@@ -56,10 +70,11 @@ public abstract class Shape
         {
             XVel *= -1;
             ColorShape = ColorGenerate();
+
         }
 
 
-        if (Y + Height > YLimit + YVel && YVel > 0)
+        if (Y + Height > yLimit + YVel && YVel > 0)
         {
             YVel *= -1;
             ColorShape = ColorGenerate();
@@ -71,10 +86,10 @@ public abstract class Shape
             ColorShape = ColorGenerate();
         }
 
-
         X += XVel;
         Y += YVel;
 
+        return Collision;
     }
 
     private Color ColorGenerate()
