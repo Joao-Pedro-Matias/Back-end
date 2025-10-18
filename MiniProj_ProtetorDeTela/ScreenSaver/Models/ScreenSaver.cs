@@ -9,8 +9,7 @@ using System.Windows.Forms;
 public class ScreenSaver : Form
 {
     // ******* Declare suas formas geométricas aqui (escopo global) *******
-
-    MyRectangle[] Rectangles = new MyRectangle[150];
+    Shape[] Shapes = new Shape[5];
 
 
     // ********************************************************************
@@ -37,7 +36,7 @@ public class ScreenSaver : Form
         {
             // ****** Mova suas formas geométricas aqui ******
 
-            foreach (var shape in Rectangles)
+            foreach (var shape in Shapes)
                 shape.Move(ClientSize.Width, ClientSize.Height);
 
             // ***********************************************
@@ -51,9 +50,41 @@ public class ScreenSaver : Form
         base.OnLoad(e);
         // ****** Instancie suas formas geométricas aqui ******
 
+        int Len = Shapes.Length;
 
-        for (int i = 0; i < Rectangles.Length; i++)
-            Rectangles[i] = new MyRectangle(ClientSize.Width, ClientSize.Height);
+        if (Len % 4 != 0)
+        {
+            if (Shapes.Length % 4 == 1)
+            {
+                Shapes[Shapes.Length - 1] = new MyRectangle(ClientSize.Width, ClientSize.Height);
+                Len--;
+            }
+
+            if (Shapes.Length % 4 == 2)
+            {
+                Shapes[Shapes.Length - 1] = new MyRectangle(ClientSize.Width, ClientSize.Height);
+                Shapes[Shapes.Length - 2] = new MySquare(ClientSize.Width, ClientSize.Height);
+                Len =-2;
+            }
+            
+            if (Shapes.Length % 4 == 3)
+            {
+                Shapes[Shapes.Length - 1] = new MyRectangle(ClientSize.Width, ClientSize.Height);
+                Shapes[Shapes.Length - 2] = new MySquare(ClientSize.Width, ClientSize.Height);
+                Shapes[Shapes.Length - 3] = new MyCircle(ClientSize.Width, ClientSize.Height);
+                Len =-3;
+            }
+        }
+
+        for (int i = 0; i < Len / 4; i++)
+        {
+            Shapes[i] = new MyRectangle(ClientSize.Width, ClientSize.Height);
+            Shapes[i + (Len / 4)] = new MySquare(ClientSize.Width, ClientSize.Height);
+            Shapes[i + ((Len / 4) * 2)] = new MyEllipse(ClientSize.Width, ClientSize.Height);
+            Shapes[i + ((Len / 4) * 3)] = new MyCircle(ClientSize.Width, ClientSize.Height);
+        }
+
+
 
 
         // ****************************************************
@@ -64,7 +95,7 @@ public class ScreenSaver : Form
         base.OnPaint(e);
         // ****** Desenhe suas formas geométricas aqui *******
 
-        foreach (var shape in Rectangles)
+        foreach (var shape in Shapes)
             shape.Draw(e.Graphics);
 
         // ***************************************************

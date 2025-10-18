@@ -16,8 +16,6 @@ public abstract class Shape
 
     public bool Collision;
 
-
-
     // Construtores
 
     public Shape(int x, int y, Color color, int width, int height, int xVel, int yVel)
@@ -34,8 +32,8 @@ public abstract class Shape
     public Shape(int xLimit, int yLimit)
     {
         //Altura e Largura Aleatórios
-        Width = Rand.Next(50, 250);
-        Height = Rand.Next(50, 250);
+        Width = Rand.Next(50, 150);
+        Height = Rand.Next(50, 150);
 
         //Posição Aleatória
         X = Rand.Next(0, xLimit - Width);
@@ -100,6 +98,8 @@ public abstract class Shape
 
         return Color.FromArgb(red, green, blue);
     }
+
+    public abstract void Draw(Graphics g);
 
     //ToString
     public override string ToString()
