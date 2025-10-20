@@ -11,6 +11,8 @@ public class ScreenSaver : Form
     // ******* Declare suas formas geométricas aqui (escopo global) *******
     Shape[] Shapes = new Shape[7];
 
+    MyImage r;
+
 
     // ********************************************************************
     private Timer ControlTimer;
@@ -38,6 +40,8 @@ public class ScreenSaver : Form
 
             foreach (var shape in Shapes)
                 shape.Move(ClientSize.Width, ClientSize.Height);
+
+            r.Move(ClientSize.Width, ClientSize.Height);
 
             // ***********************************************
             Invalidate(); // Força a tela a ser redesenhada.
@@ -80,12 +84,11 @@ public class ScreenSaver : Form
         {
             Shapes[i] = new MyRectangle(ClientSize.Width, ClientSize.Height);
             Shapes[i + (Len / 4)] = new MySquare(ClientSize.Width, ClientSize.Height);
-            Shapes[i + ((Len / 4) * 2)] = new MyEllipse(ClientSize.Width, ClientSize.Height);
-            Shapes[i + ((Len / 4) * 3)] = new MyCircle(ClientSize.Width, ClientSize.Height);
+            Shapes[i + (Len / 4 * 2)] = new MyEllipse(ClientSize.Width, ClientSize.Height);
+            Shapes[i + (Len / 4 * 3)] = new MyCircle(ClientSize.Width, ClientSize.Height);
         }
 
-
-
+        r = new MyImage(ClientSize.Width, ClientSize.Height);
 
         // ****************************************************
     }
@@ -97,6 +100,8 @@ public class ScreenSaver : Form
 
         foreach (var shape in Shapes)
             shape.Draw(e.Graphics);
+
+        r.Draw(e.Graphics);
 
         // ***************************************************
 
