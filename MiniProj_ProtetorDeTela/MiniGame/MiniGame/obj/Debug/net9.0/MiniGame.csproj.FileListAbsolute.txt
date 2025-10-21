@@ -1,0 +1,5 @@
+C:\Users\JP\OneDrive\Documentos\João\Faculdade\SENAI\Back-End\Back-end\MiniProj_ProtetorDeTela\MiniGame\MiniGame\obj\Debug\net9.0\MiniGame.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\JP\OneDrive\Documentos\João\Faculdade\SENAI\Back-End\Back-end\MiniProj_ProtetorDeTela\MiniGame\MiniGame\obj\Debug\net9.0\MiniGame.AssemblyInfoInputs.cache
+C:\Users\JP\OneDrive\Documentos\João\Faculdade\SENAI\Back-End\Back-end\MiniProj_ProtetorDeTela\MiniGame\MiniGame\obj\Debug\net9.0\MiniGame.AssemblyInfo.cs
+C:\Users\JP\OneDrive\Documentos\João\Faculdade\SENAI\Back-End\Back-end\MiniProj_ProtetorDeTela\MiniGame\MiniGame\obj\Debug\net9.0\MiniGame.csproj.CoreCompileInputs.cache
+C:\Users\JP\OneDrive\Documentos\João\Faculdade\SENAI\Back-End\Back-end\MiniProj_ProtetorDeTela\MiniGame\MiniGame\obj\Debug\net9.0\MiniGame.sourcelink.json

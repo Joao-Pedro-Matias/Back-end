@@ -12,8 +12,8 @@ public class MyImage : Shape
     {
         Photo = Image.FromFile("./Fotos/Andre1.jpeg");
 
-        Width = Math.Max(20, Photo.Width / 5);
-        Height = Math.Max(20, Photo.Height / 5);
+        Width = Photo.Width;
+        Height = Photo.Height;
     }
 
     public override void Move(int xLimit, int yLimit)
