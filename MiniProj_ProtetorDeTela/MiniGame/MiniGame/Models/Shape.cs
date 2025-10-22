@@ -1,3 +1,4 @@
+using System.Drawing;
 using System.Dynamic;
 
 namespace Models.BaseShapes;
@@ -14,11 +15,9 @@ public abstract class Shape
     protected Color ColorShape;
     protected Random Rand = new Random();
 
-    public bool Collision;
-
     // Construtores
 
-    public Shape(int x, int y, Color color, int width, int height, int xVel, int yVel)
+    public Shape(int x, int y, int width, int height, int xVel, int yVel, Color color)
     {
         X = x;
         Y = y;
@@ -29,6 +28,17 @@ public abstract class Shape
         ColorShape = color;
     }
 
+    public Shape(int x, int y, int width, int height, int xVel, int yVel)
+    {
+        X = x;
+        Y = y;
+        XVel = xVel;
+        YVel = yVel;
+        Width = width;
+        Height = height;
+    }
+
+
     public Shape(int xLimit, int yLimit)
     {
         //Altura e Largura Aleatórios
@@ -38,9 +48,6 @@ public abstract class Shape
         //Posição Aleatória
         X = Rand.Next(0, xLimit - Width);
         Y = Rand.Next(0, yLimit - Height);
-
-        //Cor Aleatória
-        ColorShape = ColorGenerate();
 
         //Velocidade != 0
         do
@@ -54,46 +61,11 @@ public abstract class Shape
     }
     //Métodos
 
-    public virtual void Move(int xLimit, int yLimit, bool jump)
-    {        
-        if (X + Width > xLimit + XVel && XVel > 0)
-        {
-            XVel *= -1;
-            ColorShape = ColorGenerate();
-        }
-
-        if (X < 0 - XVel && XVel < 0)
-        {
-            XVel *= -1;
-            ColorShape = ColorGenerate();
-
-        }
-
-
-        if (Y + Height > yLimit + YVel && YVel > 0)
-        {
-            YVel *= -1;
-            ColorShape = ColorGenerate();
-        }
-
-        if (Y < 0 - YVel && YVel < 0)
-        {
-            YVel *= -1;
-            ColorShape = ColorGenerate();
-        }
-
-        X += XVel;
-        Y += YVel;
-
-    }
-
-    private Color ColorGenerate()
+    public virtual int Move(int xLimit, int yLimit, int yFloor, bool jump)
     {
-        int red = Rand.Next(0, 255);
-        int green = Rand.Next(0, 255);
-        int blue = Rand.Next(0, 255);
+        X += XVel;
 
-        return Color.FromArgb(red, green, blue);
+        return 0;
     }
 
     public abstract void Draw(Graphics g);

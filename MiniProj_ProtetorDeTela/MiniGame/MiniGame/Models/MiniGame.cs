@@ -24,12 +24,7 @@ public class MiniGame : Form
         this.WindowState = FormWindowState.Maximized;   // Maximiza a janela
         this.KeyPreview = true;                         //Habilita o recebimento de eventos do teclado
         // Define a cor de background 
-        this.BackColor = Color.Black;
-
-        /*
-        this.BackgroundImage = Image.FromFile("./Fotos/Andre1.jpeg");
-        this.BackgroundImageLayout = ImageLayout.Stretch;  
-        */
+        this.BackColor = Color.FromArgb(135, 206, 250);
 
         // Inicializa o temporizador de controle
         ControlTimer = new Timer();
@@ -66,7 +61,7 @@ public class MiniGame : Form
         base.OnLoad(e);
         // ****** Instancie suas formas geométricas aqui ******
 
-        c1 = new MyCharacter(ClientSize.Width, ClientSize.Height);
+        c1 = new MyCharacter(100,300,0, 0, 0, 10);
 
         // ****************************************************
     }

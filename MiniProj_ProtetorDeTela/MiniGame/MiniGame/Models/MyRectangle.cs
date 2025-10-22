@@ -1,3 +1,4 @@
+using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 
@@ -8,7 +9,7 @@ public class MyRectangle : Shape
     //Atributos    
 
     // Construtores 
-    public MyRectangle(int xLimit, int yLimit) : base(xLimit, yLimit)
+    public MyRectangle(int x, int y, int width, int height, int xVel, int yVel, Color color) : base(x, y, width, height, xVel, yVel, color)
     {
     }
 
