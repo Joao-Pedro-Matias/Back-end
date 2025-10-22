@@ -13,6 +13,9 @@ public class MyRectangle : Shape
     {
     }
 
+    public MyRectangle(int xLimit, int yLimit) : base(xLimit,yLimit)
+    {}
+
     //Métodos     
 
     public override void Draw(Graphics g)

@@ -11,8 +11,10 @@ public class MiniGame : Form
     // ******* Declare suas formas geométricas aqui (escopo global) *******
     Shape[] Shapes = new Shape[7];
 
-    MyCharacter c1;
+    MyCharacter character;
+    MyRectangle floor;
     bool spacePressed = false;
+    int Floor;
 
 
     // ********************************************************************
@@ -23,26 +25,28 @@ public class MiniGame : Form
         this.DoubleBuffered = true;                     // evita flickering
         this.WindowState = FormWindowState.Maximized;   // Maximiza a janela
         this.KeyPreview = true;                         //Habilita o recebimento de eventos do teclado
-        // Define a cor de background 
-        this.BackColor = Color.FromArgb(135, 206, 250);
-
-        // Inicializa o temporizador de controle
-        ControlTimer = new Timer();
+        this.BackColor = Color.FromArgb(135, 206, 250); // Define a cor de background
+       
+        ControlTimer = new Timer();                     // Inicializa o temporizador de controle
         ControlTimer.Interval = 16;                     // 16 ms =~ 60 fps
-        // Controle da animação
-        ControlTimer.Tick += (s, e) =>
+        
+        ControlTimer.Tick += (s, e) =>                  // Controle da animação
         {
             // ****** Mova suas formas geométricas aqui ******
 
-            c1.Move(ClientSize.Width, ClientSize.Height, spacePressed);
+            Floor = floor.Move();
+
+            character.Move(ClientSize.Width, ClientSize.Height, Floor, spacePressed);
+                        
 
             // ***********************************************
             Invalidate(); // Força a tela a ser redesenhada.
+
         }; // Função anônima disparada pelo ControlTimer a cada Interval (ms)
         ControlTimer.Start();
     }
 
-
+    //Verifica se o espaço foi precionado 
     protected override void OnKeyDown(KeyEventArgs e)
     {
         if (e.KeyCode == Keys.Space)
@@ -56,12 +60,16 @@ public class MiniGame : Form
     }
 
 
+
+
     protected override void OnLoad(EventArgs e)
     {
         base.OnLoad(e);
         // ****** Instancie suas formas geométricas aqui ******
 
-        c1 = new MyCharacter(100,300,0, 0, 0, 10);
+        character = new MyCharacter(100, 300, 0, 0, 0, 10);
+        
+        floor = new MyRectangle(0, ClientSize.Height - 50, ClientSize.Width/4, 50, 0, 0, Color.FromArgb(101, 67, 33));
 
         // ****************************************************
     }
@@ -71,7 +79,8 @@ public class MiniGame : Form
         base.OnPaint(e);
         // ****** Desenhe suas formas geométricas aqui *******
 
-        c1.Draw(e.Graphics);
+        character.Draw(e.Graphics);
+        floor.Draw(e.Graphics);
 
         // ***************************************************
 

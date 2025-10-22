@@ -61,11 +61,19 @@ public abstract class Shape
     }
     //Métodos
 
-    public virtual int Move(int xLimit, int yLimit, int yFloor, bool jump)
+    public virtual void Move(int xLimit, int yLimit, bool jump) //Move Padrão
     {
-        X += XVel;
+        X -= XVel;
+    }
 
-        return 0;
+    public virtual void Move(int xLimit, int yLimit, int yFloor, bool jump) //Move Character
+    {
+    }
+    
+    public virtual int Move()  //Move Floor
+    {
+        X -= XVel;
+        return Y;
     }
 
     public abstract void Draw(Graphics g);

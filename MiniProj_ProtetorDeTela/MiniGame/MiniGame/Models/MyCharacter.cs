@@ -18,16 +18,18 @@ public class MyCharacter : Shape
         Height = Math.Max(20, Photo.Height / 7);
     }
 
-    public override int Move(int xLimit, int yLimit, int yFloor, bool jump)
+    public override void Move(int xLimit, int yLimit, int yFloor, bool jump)
     {
 
         if (jump)
             Jump = 1;                               //Verifica se o espaço foi precionado
 
+
+        if (YVel <= 10)  //Gravidade(Max=10)         
+            YVel++;
             
-        if (Y + Height + 20 < yLimit)
-            if (YVel<=10)
-                YVel++;                               //Gravidade(Parando antes de sair da tela)
+        if (Y + 200 > yFloor)
+                YVel = 0;                              
 
         if (Jump >= 1)
         {
@@ -37,15 +39,13 @@ public class MyCharacter : Shape
                 Jump = 0;
         }
 
-        if (YVel > 0)
+        if (YVel >= 0)
             Photo = Image.FromFile("./Fotos/AndreMochila.png");
         else
-            Photo = Image.FromFile("./Fotos/AndreMochilaHigh.png");
-
-
+            Photo = Image.FromFile("./Fotos/AndreMochilaHigh.png");      
+        
         Y += YVel;
             
-        return 0;
     }
 
     public override void Draw(Graphics g)

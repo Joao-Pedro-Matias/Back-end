@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Joao Pedro Matias\\Documents\\Back\\Back-end\\MiniProj_ProtetorDeTela\\MiniGame\\MiniGame\\MiniGame.csproj": {}
+    "C:\\Users\\JP\\OneDrive\\Documentos\\João\\Faculdade\\SENAI\\Back-End\\Back-end\\Back-end\\MiniProj_ProtetorDeTela\\MiniGame\\MiniGame\\MiniGame.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Joao Pedro Matias\\Documents\\Back\\Back-end\\MiniProj_ProtetorDeTela\\MiniGame\\MiniGame\\MiniGame.csproj": {
+    "C:\\Users\\JP\\OneDrive\\Documentos\\João\\Faculdade\\SENAI\\Back-End\\Back-end\\Back-end\\MiniProj_ProtetorDeTela\\MiniGame\\MiniGame\\MiniGame.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Joao Pedro Matias\\Documents\\Back\\Back-end\\MiniProj_ProtetorDeTela\\MiniGame\\MiniGame\\MiniGame.csproj",
+        "projectUniqueName": "C:\\Users\\JP\\OneDrive\\Documentos\\João\\Faculdade\\SENAI\\Back-End\\Back-end\\Back-end\\MiniProj_ProtetorDeTela\\MiniGame\\MiniGame\\MiniGame.csproj",
         "projectName": "MiniGame",
-        "projectPath": "C:\\Users\\Joao Pedro Matias\\Documents\\Back\\Back-end\\MiniProj_ProtetorDeTela\\MiniGame\\MiniGame\\MiniGame.csproj",
-        "packagesPath": "C:\\Users\\Joao Pedro Matias\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Joao Pedro Matias\\Documents\\Back\\Back-end\\MiniProj_ProtetorDeTela\\MiniGame\\MiniGame\\obj\\",
+        "projectPath": "C:\\Users\\JP\\OneDrive\\Documentos\\João\\Faculdade\\SENAI\\Back-End\\Back-end\\Back-end\\MiniProj_ProtetorDeTela\\MiniGame\\MiniGame\\MiniGame.csproj",
+        "packagesPath": "C:\\Users\\JP\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\JP\\OneDrive\\Documentos\\João\\Faculdade\\SENAI\\Back-End\\Back-end\\Back-end\\MiniProj_ProtetorDeTela\\MiniGame\\MiniGame\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Joao Pedro Matias\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\JP\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0-windows"
@@ -62,7 +62,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
