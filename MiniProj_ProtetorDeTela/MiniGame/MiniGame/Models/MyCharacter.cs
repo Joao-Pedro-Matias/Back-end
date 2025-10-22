@@ -2,6 +2,7 @@ using System.Reflection;
 using System.Security;
 using System.Drawing;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Models.BaseShapes;
 
@@ -18,18 +19,18 @@ public class MyCharacter : Shape
         Height = Math.Max(20, Photo.Height / 7);
     }
 
-    public override void Move(int xLimit, int yLimit, int yFloor, bool jump)
+    public override int[] Move(int xLimit, int yLimit, int[] floor, bool jump)
     {
 
-        if (jump)
-            Jump = 1;                               //Verifica se o espaço foi precionado
+        if (jump)       //Verifica se o espaço foi precionado
+            Jump = 1;
 
 
-        if (YVel <= 10)  //Gravidade(Max=10)         
+        if (YVel <= 10) //Gravidade(Max=10)         
             YVel++;
-            
-        if (Y + 200 > yFloor)
-                YVel = 0;                              
+
+        if (Y + Height > floor[1] && X < floor[0])
+            YVel = 0;
 
         if (Jump >= 1)
         {
@@ -42,10 +43,11 @@ public class MyCharacter : Shape
         if (YVel >= 0)
             Photo = Image.FromFile("./Fotos/AndreMochila.png");
         else
-            Photo = Image.FromFile("./Fotos/AndreMochilaHigh.png");      
-        
+            Photo = Image.FromFile("./Fotos/AndreMochilaHigh.png");
+
         Y += YVel;
-            
+
+        return [X, X + Width, Y, Y + Height];
     }
 
     public override void Draw(Graphics g)

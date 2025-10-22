@@ -14,6 +14,7 @@ public abstract class Shape
     protected int Height;
     protected Color ColorShape;
     protected Random Rand = new Random();
+    private bool Collision;
 
     // Construtores
 
@@ -61,19 +62,30 @@ public abstract class Shape
     }
     //Métodos
 
-    public virtual void Move(int xLimit, int yLimit, bool jump) //Move Padrão
+    public virtual bool Move(int[] character) //Move Padrão
     {
+        Collision = false;
+
+        if (character[1] >= X || character[0] <= X + Width) //Verifica se ele está na Largura da árvore
+            if (character[3] <= Y)  //Verifica se ele está na altura da árvore
+                Collision = true;
+
         X -= XVel;
+
+        return Collision;
     }
 
-    public virtual void Move(int xLimit, int yLimit, int yFloor, bool jump) //Move Character
+    public virtual int[] Move(int xLimit, int yLimit, int[] floor, bool jump) //Move Character
     {
+        return [0];
     }
-    
-    public virtual int Move()  //Move Floor
+
+    public virtual int[] Move()  //Move Floor
     {
-        X -= XVel;
-        return Y;
+        if (X + Width >= 0)
+            X -= XVel;
+
+        return [X + Width, Y];
     }
 
     public abstract void Draw(Graphics g);
