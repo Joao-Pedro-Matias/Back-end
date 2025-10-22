@@ -10,7 +10,7 @@ public class MyImage : Shape
 
     public MyImage(int xLimit, int yLimit) : base(xLimit, yLimit)
     {
-        Photo = Image.FromFile("./Fotos/Andre1.jpeg");
+        Photo = ImageGenerate();
 
         Width = Photo.Width;
         Height = Photo.Height;

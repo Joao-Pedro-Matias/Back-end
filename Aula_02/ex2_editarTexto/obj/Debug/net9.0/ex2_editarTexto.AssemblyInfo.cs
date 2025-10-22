@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ex2_editarTexto")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cceacc74de5988abc169b9368d9e267b49491d35")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2ff8faa013c36f5de817e041b36ee4528d785e98")]
 [assembly: System.Reflection.AssemblyProductAttribute("ex2_editarTexto")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ex2_editarTexto")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
