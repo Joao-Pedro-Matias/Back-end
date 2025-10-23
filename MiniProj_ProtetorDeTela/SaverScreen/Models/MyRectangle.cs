@@ -11,6 +11,7 @@ public class MyRectangle : Shape
     public MyRectangle(int xLimit, int yLimit) : base(xLimit, yLimit)
     {
     }
+    
 
     //Métodos     
 

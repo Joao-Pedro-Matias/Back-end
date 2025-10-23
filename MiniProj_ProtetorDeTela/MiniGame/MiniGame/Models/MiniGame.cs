@@ -16,11 +16,16 @@ public class MiniGame : Form
     bool spacePressed;
     bool enterPressed;
     int[] Floor;
-    int[] Character;
+    int[] HitBoxCharacter;
+    int NewObstacle=0;
+    int NewObstaclePos;
     MyObstacle tree;
     MyObstacle tree2;
     int Collision;
-    int Desbug;
+    int[] HitBoxObstacle;
+    int Debug;
+    MyObstacle[] Obstacles = new MyObstacle[5];
+
 
 
 
@@ -40,46 +45,73 @@ public class MiniGame : Form
 
 
         Floor = new int[2];
-        Character = new int[4];
+        HitBoxCharacter = new int[4];
 
         ControlTimer.Tick += (s, e) =>                  // Controle da animação
         {
             // ****** Mova suas formas geométricas aqui ******
 
+            
+
             if (Collision == 0)
             {
                 Floor = floor.Move();
 
-                Character = character.Move(ClientSize.Width, ClientSize.Height, Floor, spacePressed);
+                HitBoxCharacter = character.Move(ClientSize.Width, ClientSize.Height, Floor, spacePressed);
 
-                Collision += tree.Move(Character);
-                Collision += tree2.Move(Character);
+                HitBoxObstacle = tree.Move(HitBoxCharacter);
+                Collision += HitBoxObstacle[0];
+                HitBoxObstacle = tree2.Move(HitBoxCharacter);
+                Collision += HitBoxObstacle[0];
 
+
+                int i = 0;
+                foreach (var obstacle in Obstacles)
+                {
+                    HitBoxObstacle = obstacle.Move(HitBoxCharacter);
+                    Collision += HitBoxObstacle[0];
+                    if (HitBoxObstacle[1] < 0)
+                    {
+                        NewObstacle++;
+                        NewObstaclePos = i;
+                    }
+                    i++;
+                }
 
                 // ***********************************************
+                NewOnPaint(NewObstacle, NewObstaclePos, HitBoxObstacle[1]);
                 Invalidate(); // Força a tela a ser redesenhada.
+                NewObstacle = 0;
             }
 
             if (enterPressed)
-                Desbug = 1;
+                Debug = 1;
 
-            if (Desbug >= 1 && Desbug < 50)
+            if (Debug >= 1 && Debug < 40)
             {
                 Floor = floor.Move();
 
-                Character = character.Move(ClientSize.Width, ClientSize.Height, Floor, spacePressed);
+                HitBoxCharacter = character.Move(ClientSize.Width, ClientSize.Height, Floor, spacePressed);
 
-                Collision += tree.Move(Character);
-                Collision += tree2.Move(Character);
+                HitBoxObstacle = tree.Move(HitBoxCharacter);
+                HitBoxObstacle = tree2.Move(HitBoxCharacter);
+
+                foreach (var obstacle in Obstacles)
+                {
+                    HitBoxObstacle = obstacle.Move(HitBoxCharacter);
+
+
+                }
 
                 // ***********************************************
                 Invalidate(); // Força a tela a ser redesenhada.
 
-                Desbug++;
-                Collision = 0;                
+                Debug++;
+                Collision = 0;
             }
             else
-                Desbug = 0;
+                Debug = 0;
+
         }; // Função anônima disparada pelo ControlTimer a cada Interval (ms)
         ControlTimer.Start();
     }
@@ -91,7 +123,7 @@ public class MiniGame : Form
             spacePressed = true;
 
         if (e.KeyCode == Keys.Enter)
-            enterPressed = true;       
+            enterPressed = true;
 
     }
 
@@ -112,13 +144,18 @@ public class MiniGame : Form
         base.OnLoad(e);
         // ****** Instancie suas formas geométricas aqui ******
 
-        character = new MyCharacter(100, 300, 10);
+        character = new MyCharacter(100, 300);
 
         floor = new MyObstacle(0, ClientSize.Height - 50, ClientSize.Width / 4, 50, 3, 0, Color.FromArgb(101, 67, 33));
 
         tree = new MyObstacle(ClientSize.Width / 2, ClientSize.Height / 2, 150, ClientSize.Height / 2, 3, 0, Color.FromArgb(101, 67, 33), false);
 
         tree2 = new MyObstacle(ClientSize.Width / 2 + 500, 0, 150, ClientSize.Height / 2, 3, 0, Color.FromArgb(101, 67, 33), true);
+
+        for (int i = 0; i < Obstacles.Length; i++)
+            Obstacles[i] = new MyObstacle(ClientSize.Height, character.Height, ClientSize.Width / 2 + 500 + i * 500);
+
+
 
         // ****************************************************
     }
@@ -136,7 +173,16 @@ public class MiniGame : Form
 
         tree2.Draw(e.Graphics);
 
+        foreach (var obstacle in Obstacles)
+            obstacle.Draw(e.Graphics);
+
         // ***************************************************
 
+    }
+
+    protected void NewOnPaint(int newObstacle, int newObstaclePos, int last)
+    {
+        if (newObstacle != 0)
+            Obstacles[newObstaclePos] = new MyObstacle(ClientSize.Height, character.Height, last);
     }
 }

@@ -11,7 +11,7 @@ public class MyCharacter : Shape
     private Image Photo;
     private int Jump;
 
-    public MyCharacter(int x, int y, int yVel) : base(x, y, yVel)
+    public MyCharacter(int x, int y) : base(x, y)
     {
         Photo = Image.FromFile("./Fotos/AndreMochila.png");
 

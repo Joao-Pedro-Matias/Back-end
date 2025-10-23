@@ -11,15 +11,16 @@ public abstract class Shape
     protected int XVel;
     protected int YVel;
     protected int Width;
-    protected int Height;
+    public int Height { get; protected set; }
     protected Color ColorShape;
     protected Random Rand = new Random();
     private int Collision;
     private bool Cima;
+    private int Sorteio;
 
     // Construtores
 
-    public Shape(int x, int y, int width, int height, int xVel, int yVel, Color color, bool cima)
+    public Shape(int x, int y, int width, int height, int xVel, int yVel, Color color, bool cima)   //Construtor do 1º obstáculo
     {
         X = x;
         Y = y;
@@ -29,6 +30,32 @@ public abstract class Shape
         Height = height;
         ColorShape = color;
         Cima = cima;
+    }
+
+    public Shape(int yLimit, int cHeigth, int last)   //Construtor dos obstáculos
+    {                
+        YVel = 0;
+        XVel = 3;
+        ColorShape = Color.FromArgb(101, 67, 33);
+
+        Width = 150;
+        Height = Rand.Next(0, yLimit-cHeigth-100); 
+
+        Sorteio = Rand.Next(0, 2);
+        if (Sorteio == 0)
+        {
+            Y = 0;
+            Cima = true;
+        }
+        else
+        {
+            Y = yLimit - Height;
+            Cima = false;
+        }
+
+
+        X = last + 500;   
+               
     }
 
     public Shape(int x, int y, int width, int height, int xVel, int yVel, Color color) // Construtor Floor
@@ -42,18 +69,18 @@ public abstract class Shape
         ColorShape = color;
     }
 
-    public Shape(int x, int y, int yVel)    //Construtor Character
+    public Shape(int x, int y)    //Construtor Character
     {
         X = x;
         Y = y;
         XVel = 0;
-        YVel = yVel;
+        YVel = 10;
     }
 
 
     //Métodos
 
-    public virtual int Move(int[] character) //Move Padrão
+    public virtual int[] Move(int[] character) //Move Padrão
     {
         Collision = 0;
 
@@ -76,7 +103,7 @@ public abstract class Shape
 
         X -= XVel;
 
-        return Collision;
+        return [Collision, X + Width];
     }
 
     public virtual int[] Move(int xLimit, int yLimit, int[] floor, bool jump) //Move Character
