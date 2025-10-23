@@ -4,17 +4,17 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace Models.BaseShapes;
 
-public class MyRectangle : Shape
+public class MyObstacle : Shape
 {
     //Atributos    
 
     // Construtores 
-    public MyRectangle(int x, int y, int width, int height, int xVel, int yVel, Color color) : base(x, y, width, height, xVel, yVel, color)
+    public MyObstacle(int x, int y, int width, int height, int xVel, int yVel, Color color, bool cima) : base(x, y, width, height, xVel, yVel, color, cima)
     {
     }
-
-    public MyRectangle(int xLimit, int yLimit) : base(xLimit,yLimit)
-    {}
+    public MyObstacle(int x, int y, int width, int height, int xVel, int yVel, Color color) : base(x, y, width, height, xVel, yVel, color)
+    {
+    }
 
     //Métodos     
 

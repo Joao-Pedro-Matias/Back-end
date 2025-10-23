@@ -14,11 +14,24 @@ public abstract class Shape
     protected int Height;
     protected Color ColorShape;
     protected Random Rand = new Random();
-    private bool Collision;
+    private int Collision;
+    private bool Cima;
 
     // Construtores
 
-    public Shape(int x, int y, int width, int height, int xVel, int yVel, Color color)
+    public Shape(int x, int y, int width, int height, int xVel, int yVel, Color color, bool cima)
+    {
+        X = x;
+        Y = y;
+        XVel = xVel;
+        YVel = yVel;
+        Width = width;
+        Height = height;
+        ColorShape = color;
+        Cima = cima;
+    }
+
+    public Shape(int x, int y, int width, int height, int xVel, int yVel, Color color) // Construtor Floor
     {
         X = x;
         Y = y;
@@ -29,46 +42,37 @@ public abstract class Shape
         ColorShape = color;
     }
 
-    public Shape(int x, int y, int width, int height, int xVel, int yVel)
+    public Shape(int x, int y, int yVel)    //Construtor Character
     {
         X = x;
         Y = y;
-        XVel = xVel;
+        XVel = 0;
         YVel = yVel;
-        Width = width;
-        Height = height;
     }
 
 
-    public Shape(int xLimit, int yLimit)
-    {
-        //Altura e Largura Aleatórios
-        Width = Rand.Next(50, 150);
-        Height = Rand.Next(50, 150);
-
-        //Posição Aleatória
-        X = Rand.Next(0, xLimit - Width);
-        Y = Rand.Next(0, yLimit - Height);
-
-        //Velocidade != 0
-        do
-            XVel = Rand.Next(-10, 10);
-        while (XVel == 0);
-
-        do
-            YVel = Rand.Next(-10, 10);
-        while (YVel == 0);
-
-    }
     //Métodos
 
-    public virtual bool Move(int[] character) //Move Padrão
+    public virtual int Move(int[] character) //Move Padrão
     {
-        Collision = false;
+        Collision = 0;
 
-        if (character[1] >= X || character[0] <= X + Width) //Verifica se ele está na Largura da árvore
-            if (character[3] <= Y)  //Verifica se ele está na altura da árvore
-                Collision = true;
+        if (!Cima)
+        {
+            if (character[1] >= X && character[1] <= X + Width && character[3] >= Y)         //Verifica se ele bateu na ponta esquerda da árvore    
+                Collision++;
+
+            if (character[0] >= X && character[0] <= X + Width && character[3] >= Y)         //Verifica se ele bateu em cima da árvore    
+                Collision++;
+        }
+        else
+        {
+            if (character[1] >= X && character[1] <= X + Width && character[2] <= Y + Height)         //Verifica se ele bateu na ponta esquerda da árvore    
+                Collision++;
+
+            if (character[0] >= X && character[0] <= X + Width && character[2] <= Y + Height)         //Verifica se ele bateu embaixo da árvore    
+                Collision++;
+        }
 
         X -= XVel;
 

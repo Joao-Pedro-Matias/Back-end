@@ -12,12 +12,15 @@ public class MiniGame : Form
     Shape[] Shapes = new Shape[7];
 
     MyCharacter character;
-    MyRectangle floor;
-    bool spacePressed = false;
+    MyObstacle floor;
+    bool spacePressed;
+    bool enterPressed;
     int[] Floor;
     int[] Character;
-    MyRectangle tree;
-    bool Collision;
+    MyObstacle tree;
+    MyObstacle tree2;
+    int Collision;
+    int Desbug;
 
 
 
@@ -43,20 +46,40 @@ public class MiniGame : Form
         {
             // ****** Mova suas formas geométricas aqui ******
 
-            if (!Collision)
+            if (Collision == 0)
             {
-
                 Floor = floor.Move();
 
                 Character = character.Move(ClientSize.Width, ClientSize.Height, Floor, spacePressed);
 
-                Collision = tree.Move(Character);
+                Collision += tree.Move(Character);
+                Collision += tree2.Move(Character);
 
 
                 // ***********************************************
                 Invalidate(); // Força a tela a ser redesenhada.
-
             }
+
+            if (enterPressed)
+                Desbug = 1;
+
+            if (Desbug >= 1 && Desbug < 50)
+            {
+                Floor = floor.Move();
+
+                Character = character.Move(ClientSize.Width, ClientSize.Height, Floor, spacePressed);
+
+                Collision += tree.Move(Character);
+                Collision += tree2.Move(Character);
+
+                // ***********************************************
+                Invalidate(); // Força a tela a ser redesenhada.
+
+                Desbug++;
+                Collision = 0;                
+            }
+            else
+                Desbug = 0;
         }; // Função anônima disparada pelo ControlTimer a cada Interval (ms)
         ControlTimer.Start();
     }
@@ -66,12 +89,19 @@ public class MiniGame : Form
     {
         if (e.KeyCode == Keys.Space)
             spacePressed = true;
+
+        if (e.KeyCode == Keys.Enter)
+            enterPressed = true;       
+
     }
 
     protected override void OnKeyUp(KeyEventArgs e)
     {
         if (e.KeyCode == Keys.Space)
             spacePressed = false;
+
+        if (e.KeyCode == Keys.Enter)
+            enterPressed = false;
     }
 
 
@@ -82,11 +112,13 @@ public class MiniGame : Form
         base.OnLoad(e);
         // ****** Instancie suas formas geométricas aqui ******
 
-        character = new MyCharacter(100, 300, 0, 0, 0, 10);
+        character = new MyCharacter(100, 300, 10);
 
-        floor = new MyRectangle(0, ClientSize.Height - 50, ClientSize.Width / 4, 50, 3, 0, Color.FromArgb(101, 67, 33));
+        floor = new MyObstacle(0, ClientSize.Height - 50, ClientSize.Width / 4, 50, 3, 0, Color.FromArgb(101, 67, 33));
 
-        tree = new MyRectangle(ClientSize.Width / 2, ClientSize.Height / 2, 50, ClientSize.Height / 2, 3, 0, Color.FromArgb(101, 67, 33));
+        tree = new MyObstacle(ClientSize.Width / 2, ClientSize.Height / 2, 150, ClientSize.Height / 2, 3, 0, Color.FromArgb(101, 67, 33), false);
+
+        tree2 = new MyObstacle(ClientSize.Width / 2 + 500, 0, 150, ClientSize.Height / 2, 3, 0, Color.FromArgb(101, 67, 33), true);
 
         // ****************************************************
     }
@@ -101,6 +133,8 @@ public class MiniGame : Form
         floor.Draw(e.Graphics);
 
         tree.Draw(e.Graphics);
+
+        tree2.Draw(e.Graphics);
 
         // ***************************************************
 
