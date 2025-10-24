@@ -43,3 +43,18 @@ C:\Users\JP\OneDrive\Documentos\João\Faculdade\SENAI\Back-End\Back-end\Back-end
 C:\Users\JP\OneDrive\Documentos\João\Faculdade\SENAI\Back-End\Back-end\Back-end\MiniProj_ProtetorDeTela\MiniGame\MiniGame\bin\Debug\net9.0-windows\MiniGame.pdb
 C:\Users\JP\OneDrive\Documentos\João\Faculdade\SENAI\Back-End\Back-end\Back-end\MiniProj_ProtetorDeTela\MiniGame\MiniGame\obj\Debug\net9.0-windows\MiniGame.genruntimeconfig.cache
 C:\Users\JP\OneDrive\Documentos\João\Faculdade\SENAI\Back-End\Back-end\Back-end\MiniProj_ProtetorDeTela\MiniGame\MiniGame\obj\Debug\net9.0-windows\ref\MiniGame.dll
+C:\Users\Joao Pedro Matias\Documents\Back\Back-End\Back-end\MiniProj_ProtetorDeTela\MiniGame\MiniGame\bin\Debug\net9.0-windows\MiniGame.exe
+C:\Users\Joao Pedro Matias\Documents\Back\Back-End\Back-end\MiniProj_ProtetorDeTela\MiniGame\MiniGame\bin\Debug\net9.0-windows\MiniGame.deps.json
+C:\Users\Joao Pedro Matias\Documents\Back\Back-End\Back-end\MiniProj_ProtetorDeTela\MiniGame\MiniGame\bin\Debug\net9.0-windows\MiniGame.runtimeconfig.json
+C:\Users\Joao Pedro Matias\Documents\Back\Back-End\Back-end\MiniProj_ProtetorDeTela\MiniGame\MiniGame\bin\Debug\net9.0-windows\MiniGame.dll
+C:\Users\Joao Pedro Matias\Documents\Back\Back-End\Back-end\MiniProj_ProtetorDeTela\MiniGame\MiniGame\bin\Debug\net9.0-windows\MiniGame.pdb
+C:\Users\Joao Pedro Matias\Documents\Back\Back-End\Back-end\MiniProj_ProtetorDeTela\MiniGame\MiniGame\obj\Debug\net9.0-windows\MiniGame.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Joao Pedro Matias\Documents\Back\Back-End\Back-end\MiniProj_ProtetorDeTela\MiniGame\MiniGame\obj\Debug\net9.0-windows\MiniGame.AssemblyInfoInputs.cache
+C:\Users\Joao Pedro Matias\Documents\Back\Back-End\Back-end\MiniProj_ProtetorDeTela\MiniGame\MiniGame\obj\Debug\net9.0-windows\MiniGame.AssemblyInfo.cs
+C:\Users\Joao Pedro Matias\Documents\Back\Back-End\Back-end\MiniProj_ProtetorDeTela\MiniGame\MiniGame\obj\Debug\net9.0-windows\MiniGame.csproj.CoreCompileInputs.cache
+C:\Users\Joao Pedro Matias\Documents\Back\Back-End\Back-end\MiniProj_ProtetorDeTela\MiniGame\MiniGame\obj\Debug\net9.0-windows\MiniGame.sourcelink.json
+C:\Users\Joao Pedro Matias\Documents\Back\Back-End\Back-end\MiniProj_ProtetorDeTela\MiniGame\MiniGame\obj\Debug\net9.0-windows\MiniGame.dll
+C:\Users\Joao Pedro Matias\Documents\Back\Back-End\Back-end\MiniProj_ProtetorDeTela\MiniGame\MiniGame\obj\Debug\net9.0-windows\refint\MiniGame.dll
+C:\Users\Joao Pedro Matias\Documents\Back\Back-End\Back-end\MiniProj_ProtetorDeTela\MiniGame\MiniGame\obj\Debug\net9.0-windows\MiniGame.pdb
+C:\Users\Joao Pedro Matias\Documents\Back\Back-End\Back-end\MiniProj_ProtetorDeTela\MiniGame\MiniGame\obj\Debug\net9.0-windows\MiniGame.genruntimeconfig.cache
+C:\Users\Joao Pedro Matias\Documents\Back\Back-End\Back-end\MiniProj_ProtetorDeTela\MiniGame\MiniGame\obj\Debug\net9.0-windows\ref\MiniGame.dll

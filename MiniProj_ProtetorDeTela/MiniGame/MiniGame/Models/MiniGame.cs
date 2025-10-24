@@ -9,8 +9,6 @@ using System.Windows.Forms;
 public class MiniGame : Form
 {
     // ******* Declare suas formas geométricas aqui (escopo global) *******
-    Shape[] Shapes = new Shape[7];
-
     MyCharacter character;
     MyObstacle floor;
     bool spacePressed;
@@ -19,8 +17,8 @@ public class MiniGame : Form
     int[] HitBoxCharacter;
     int NewObstacle=0;
     int NewObstaclePos;
-    MyObstacle tree;
-    MyObstacle tree2;
+    MyObstacle obstacle1;
+    MyObstacle obstacle2;
     int Collision;
     int[] HitBoxObstacle;
     int Debug;
@@ -59,9 +57,9 @@ public class MiniGame : Form
 
                 HitBoxCharacter = character.Move(ClientSize.Width, ClientSize.Height, Floor, spacePressed);
 
-                HitBoxObstacle = tree.Move(HitBoxCharacter);
+                HitBoxObstacle = obstacle1.Move(HitBoxCharacter);
                 Collision += HitBoxObstacle[0];
-                HitBoxObstacle = tree2.Move(HitBoxCharacter);
+                HitBoxObstacle = obstacle2.Move(HitBoxCharacter);
                 Collision += HitBoxObstacle[0];
 
 
@@ -93,8 +91,8 @@ public class MiniGame : Form
 
                 HitBoxCharacter = character.Move(ClientSize.Width, ClientSize.Height, Floor, spacePressed);
 
-                HitBoxObstacle = tree.Move(HitBoxCharacter);
-                HitBoxObstacle = tree2.Move(HitBoxCharacter);
+                HitBoxObstacle = obstacle1.Move(HitBoxCharacter);
+                HitBoxObstacle = obstacle2.Move(HitBoxCharacter);
 
                 foreach (var obstacle in Obstacles)
                 {
@@ -146,11 +144,11 @@ public class MiniGame : Form
 
         character = new MyCharacter(100, 300);
 
-        floor = new MyObstacle(0, ClientSize.Height - 50, ClientSize.Width / 4, 50, 3, 0, Color.FromArgb(101, 67, 33));
+        floor = new MyObstacle(0, ClientSize.Height - 50, ClientSize.Width / 4, 50, 7, 0, Color.FromArgb(101, 67, 33));
 
-        tree = new MyObstacle(ClientSize.Width / 2, ClientSize.Height / 2, 150, ClientSize.Height / 2, 3, 0, Color.FromArgb(101, 67, 33), false);
+        obstacle1 = new MyObstacle(ClientSize.Width / 2, ClientSize.Height / 2, 150, ClientSize.Height / 2, 7, 0, Color.FromArgb(101, 67, 33), false);
 
-        tree2 = new MyObstacle(ClientSize.Width / 2 + 500, 0, 150, ClientSize.Height / 2, 3, 0, Color.FromArgb(101, 67, 33), true);
+        obstacle2 = new MyObstacle(ClientSize.Width / 2 + 500, 0, 150, ClientSize.Height / 2, 7, 0, Color.FromArgb(101, 67, 33), true);
 
         for (int i = 0; i < Obstacles.Length; i++)
             Obstacles[i] = new MyObstacle(ClientSize.Height, character.Height, ClientSize.Width / 2 + 500 + i * 500);
@@ -169,9 +167,9 @@ public class MiniGame : Form
 
         floor.Draw(e.Graphics);
 
-        tree.Draw(e.Graphics);
+        obstacle1.Draw(e.Graphics);
 
-        tree2.Draw(e.Graphics);
+        obstacle2.Draw(e.Graphics);
 
         foreach (var obstacle in Obstacles)
             obstacle.Draw(e.Graphics);

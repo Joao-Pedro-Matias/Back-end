@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Joao Pedro Matias\\Documents\\Back\\Back-end\\MiniProj_ProtetorDeTela\\SaverScreen\\ScreenSaver.csproj": {}
+    "C:\\Users\\Joao Pedro Matias\\Documents\\Back\\Back-End\\Back-end\\MiniProj_ProtetorDeTela\\SaverScreen\\ScreenSaver.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Joao Pedro Matias\\Documents\\Back\\Back-end\\MiniProj_ProtetorDeTela\\SaverScreen\\ScreenSaver.csproj": {
+    "C:\\Users\\Joao Pedro Matias\\Documents\\Back\\Back-End\\Back-end\\MiniProj_ProtetorDeTela\\SaverScreen\\ScreenSaver.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Joao Pedro Matias\\Documents\\Back\\Back-end\\MiniProj_ProtetorDeTela\\SaverScreen\\ScreenSaver.csproj",
+        "projectUniqueName": "C:\\Users\\Joao Pedro Matias\\Documents\\Back\\Back-End\\Back-end\\MiniProj_ProtetorDeTela\\SaverScreen\\ScreenSaver.csproj",
         "projectName": "ScreenSaver",
-        "projectPath": "C:\\Users\\Joao Pedro Matias\\Documents\\Back\\Back-end\\MiniProj_ProtetorDeTela\\SaverScreen\\ScreenSaver.csproj",
+        "projectPath": "C:\\Users\\Joao Pedro Matias\\Documents\\Back\\Back-End\\Back-end\\MiniProj_ProtetorDeTela\\SaverScreen\\ScreenSaver.csproj",
         "packagesPath": "C:\\Users\\Joao Pedro Matias\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Joao Pedro Matias\\Documents\\Back\\Back-end\\MiniProj_ProtetorDeTela\\SaverScreen\\obj\\",
+        "outputPath": "C:\\Users\\Joao Pedro Matias\\Documents\\Back\\Back-End\\Back-end\\MiniProj_ProtetorDeTela\\SaverScreen\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Joao Pedro Matias\\AppData\\Roaming\\NuGet\\NuGet.Config"

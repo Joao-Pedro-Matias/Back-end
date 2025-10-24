@@ -48,8 +48,6 @@
             return r.Next(min, max);
         }
 
-
-
         //ToString
 
         public override string ToString()

@@ -7,39 +7,65 @@ namespace Models.BaseShapes;
 public class MyImage : Shape
 {
     private Image Photo;
+    private double Area;
+    private double NewWidth = 0;
+    private double NewHeight = 0;
 
     public MyImage(int xLimit, int yLimit) : base(xLimit, yLimit)
     {
-        Photo = Image.FromFile("./Fotos/Andre1.jpeg");
+        Photo = Image.FromFile("./Fotos/Andre4.jpeg");
 
-        Width = Photo.Width;
-        Height = Photo.Height;
+        for (double i = 1; Area > 40000; i += 0.1)
+        {
+            NewWidth = Photo.Width / i;
+            NewHeight = Photo.Height / i;
+            Area = NewWidth * NewHeight;
+        }
+
     }
 
-    public override void Move(int xLimit, int yLimit)
+    public override void Move(int xLimit, int yLimit, bool generate)
     {
-        if (X + Width > xLimit + XVel && XVel > 0)
+        if (generate)
         {
-            XVel *= -1;
-            ImageGenerate();
-        }
+            if (X + Width > xLimit + XVel && XVel > 0)
+            {
+                XVel *= -1;
+                ImageGenerate();
+            }
 
-        if (X < 0 - XVel && XVel < 0)
-        {
-            XVel *= -1;
-            ImageGenerate();
-        }
+            if (X < 0 - XVel && XVel < 0)
+            {
+                XVel *= -1;
+                ImageGenerate();
+            }
 
-        if (Y + Height > yLimit + YVel && YVel > 0)
-        {
-            YVel *= -1;
-            ImageGenerate();
-        }
+            if (Y + Height > yLimit + YVel && YVel > 0)
+            {
+                YVel *= -1;
+                ImageGenerate();
+            }
 
-        if (Y < 0 - YVel && YVel < 0)
+            if (Y < 0 - YVel && YVel < 0)
+            {
+                YVel *= -1;
+                ImageGenerate();
+            }
+        }
+        else
         {
-            YVel *= -1;
-            ImageGenerate();
+
+            if (X + Width > xLimit + XVel && XVel > 0)
+                XVel *= -1;
+
+            if (X < 0 - XVel && XVel < 0)
+                XVel *= -1;
+
+            if (Y + Height > yLimit + YVel && YVel > 0)
+                YVel *= -1;
+
+            if (Y < 0 - YVel && YVel < 0)
+                YVel *= -1;
         }
 
         X += XVel;
@@ -54,9 +80,9 @@ public class MyImage : Shape
     public void ImageGenerate()
     {
         Image[] Images = new Image[5];
-        double Area;
-        double NewWidth = 0;
-        double NewHeight = 0;
+        Area = 0;
+        NewWidth = 0;
+        NewHeight = 0;
 
         Images[0] = Image.FromFile("./Fotos/Andre1.jpeg");
         Images[1] = Image.FromFile("./Fotos/Andre2.jpeg");
@@ -68,7 +94,7 @@ public class MyImage : Shape
 
         Area = Photo.Width * Photo.Height;
 
-        for (double i = 1; Area > 40000; i+=0.1)
+        for (double i = 1; Area > 40000; i += 0.1)
         {
             NewWidth = Photo.Width / i;
             NewHeight = Photo.Height / i;

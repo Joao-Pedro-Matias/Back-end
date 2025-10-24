@@ -12,6 +12,7 @@ public class ScreenSaver : Form
     Shape[] Shapes = new Shape[7];
 
     MyImage r;
+    MyImage a;
 
 
     // ********************************************************************
@@ -41,7 +42,8 @@ public class ScreenSaver : Form
             foreach (var shape in Shapes)
                 shape.Move(ClientSize.Width, ClientSize.Height);
 
-            r.Move(ClientSize.Width, ClientSize.Height);
+            r.Move(ClientSize.Width, ClientSize.Height,true);
+            a.Move(ClientSize.Width, ClientSize.Height,false);
 
             // ***********************************************
             Invalidate(); // Força a tela a ser redesenhada.
@@ -89,6 +91,7 @@ public class ScreenSaver : Form
         }
 
         r = new MyImage(ClientSize.Width, ClientSize.Height);
+        a = new MyImage(ClientSize.Width, ClientSize.Height);
 
         // ****************************************************
     }

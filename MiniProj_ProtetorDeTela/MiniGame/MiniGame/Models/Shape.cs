@@ -35,7 +35,7 @@ public abstract class Shape
     public Shape(int yLimit, int cHeigth, int last)   //Construtor dos obstáculos
     {                
         YVel = 0;
-        XVel = 3;
+        XVel = 7;
         ColorShape = Color.FromArgb(101, 67, 33);
 
         Width = 150;

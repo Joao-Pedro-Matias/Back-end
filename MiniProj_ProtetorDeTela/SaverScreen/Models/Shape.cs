@@ -55,7 +55,7 @@ public abstract class Shape
     //Métodos
 
     public virtual void Move(int xLimit, int yLimit)
-    {        
+    {
         if (X + Width > xLimit + XVel && XVel > 0)
         {
             XVel *= -1;
@@ -86,6 +86,9 @@ public abstract class Shape
         Y += YVel;
 
     }
+    
+    public virtual void Move(int xLimit, int yLimit, bool generate)
+    {}
 
     private Color ColorGenerate()
     {
