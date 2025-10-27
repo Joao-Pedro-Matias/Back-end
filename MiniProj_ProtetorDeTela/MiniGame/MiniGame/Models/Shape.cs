@@ -101,7 +101,7 @@ public abstract class Shape
                 Collision++;
         }
 
-        X -= XVel;
+        X -= XVel;  
 
         return [Collision, X + Width];
     }

@@ -1,6 +1,7 @@
 namespace Models;
 
 using Models.BaseShapes;
+using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.Runtime.InteropServices;
@@ -17,6 +18,7 @@ public class MiniGame : Form
     int[] HitBoxCharacter;
     int NewObstacle=0;
     int NewObstaclePos;
+    int LastHitBoxObstacle;
     MyObstacle obstacle1;
     MyObstacle obstacle2;
     int Collision;
@@ -30,6 +32,8 @@ public class MiniGame : Form
 
     // ********************************************************************
     private Timer ControlTimer;
+
+    private Stopwatch gameTime;
 
     public MiniGame()
     {
@@ -61,7 +65,8 @@ public class MiniGame : Form
                 Collision += HitBoxObstacle[0];
                 HitBoxObstacle = obstacle2.Move(HitBoxCharacter);
                 Collision += HitBoxObstacle[0];
-
+                
+                LastHitBoxObstacle = HitBoxObstacle[1];
 
                 int i = 0;
                 foreach (var obstacle in Obstacles)
@@ -70,14 +75,18 @@ public class MiniGame : Form
                     Collision += HitBoxObstacle[0];
                     if (HitBoxObstacle[1] < 0)
                     {
-                        NewObstacle++;
+                        NewObstacle = 1;
                         NewObstaclePos = i;
                     }
+
+                    if (HitBoxObstacle[1] > LastHitBoxObstacle)
+                        LastHitBoxObstacle = HitBoxObstacle[1];
+
                     i++;
                 }
 
                 // ***********************************************
-                NewOnPaint(NewObstacle, NewObstaclePos, HitBoxObstacle[1]);
+                NewOnLoad(NewObstacle, NewObstaclePos, LastHitBoxObstacle);
                 Invalidate(); // Força a tela a ser redesenhada.
                 NewObstacle = 0;
             }
@@ -92,17 +101,33 @@ public class MiniGame : Form
                 HitBoxCharacter = character.Move(ClientSize.Width, ClientSize.Height, Floor, spacePressed);
 
                 HitBoxObstacle = obstacle1.Move(HitBoxCharacter);
+                Collision += HitBoxObstacle[0];
                 HitBoxObstacle = obstacle2.Move(HitBoxCharacter);
+                Collision += HitBoxObstacle[0];
+                
+                LastHitBoxObstacle = HitBoxObstacle[1];
 
+                int i = 0;
                 foreach (var obstacle in Obstacles)
                 {
                     HitBoxObstacle = obstacle.Move(HitBoxCharacter);
+                    Collision += HitBoxObstacle[0];
+                    if (HitBoxObstacle[1] < 0)
+                    {
+                        NewObstacle = 1;
+                        NewObstaclePos = i;
+                    }
 
+                    if (HitBoxObstacle[1] > LastHitBoxObstacle)
+                        LastHitBoxObstacle = HitBoxObstacle[1];
 
+                    i++;
                 }
 
                 // ***********************************************
+                NewOnLoad(NewObstacle, NewObstaclePos, LastHitBoxObstacle);
                 Invalidate(); // Força a tela a ser redesenhada.
+                NewObstacle = 0;
 
                 Debug++;
                 Collision = 0;
@@ -178,7 +203,7 @@ public class MiniGame : Form
 
     }
 
-    protected void NewOnPaint(int newObstacle, int newObstaclePos, int last)
+    protected void NewOnLoad(int newObstacle, int newObstaclePos, int last)
     {
         if (newObstacle != 0)
             Obstacles[newObstaclePos] = new MyObstacle(ClientSize.Height, character.Height, last);
