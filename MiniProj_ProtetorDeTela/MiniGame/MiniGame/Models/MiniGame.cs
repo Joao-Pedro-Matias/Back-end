@@ -48,6 +48,9 @@ public class MiniGame : Form
 
         Floor = new int[2];
         HitBoxCharacter = new int[4];
+        
+        gameTime = new Stopwatch();                     // Cronômetro
+        gameTime.Start();
 
         ControlTimer.Tick += (s, e) =>                  // Controle da animação
         {

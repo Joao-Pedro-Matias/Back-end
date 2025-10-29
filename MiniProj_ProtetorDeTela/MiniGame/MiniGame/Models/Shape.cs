@@ -39,7 +39,7 @@ public abstract class Shape
         ColorShape = Color.FromArgb(101, 67, 33);
 
         Width = 150;
-        Height = Rand.Next(0, yLimit-cHeigth-100); 
+        Height = Rand.Next(yLimit/2, yLimit-cHeigth-100); 
 
         Sorteio = Rand.Next(0, 2);
         if (Sorteio == 0)

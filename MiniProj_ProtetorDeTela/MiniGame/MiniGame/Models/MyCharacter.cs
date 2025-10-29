@@ -34,9 +34,9 @@ public class MyCharacter : Shape
 
         if (Jump >= 1)
         {
-            YVel = -6;
+            YVel = -10;
             Jump++;
-            if (Jump >= 10)
+            if (Jump >= 5)
                 Jump = 0;
         }
 
