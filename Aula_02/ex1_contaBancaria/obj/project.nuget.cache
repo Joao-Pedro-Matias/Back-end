@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "QF0EOTt0BFQ=",
+  "dgSpecHash": "tIns2z04dxA=",
   "success": true,
   "projectFilePath": "C:\\Users\\Joao Pedro Matias\\Documents\\Back\\Back-end\\Aula_02\\ex1_contaBancaria\\ex1_contaBancaria.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Joao Pedro Matias\\.nuget\\packages\\microsoft.netcore.app.ref\\9.0.11\\microsoft.netcore.app.ref.9.0.11.nupkg.sha512",
+    "C:\\Users\\Joao Pedro Matias\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\9.0.11\\microsoft.windowsdesktop.app.ref.9.0.11.nupkg.sha512",
+    "C:\\Users\\Joao Pedro Matias\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\9.0.11\\microsoft.aspnetcore.app.ref.9.0.11.nupkg.sha512",
+    "C:\\Users\\Joao Pedro Matias\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\9.0.11\\microsoft.netcore.app.host.win-x64.9.0.11.nupkg.sha512"
+  ],
   "logs": []
 }
